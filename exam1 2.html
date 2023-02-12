@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Text Box Validation</title>
+  <style>
+    table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+    .tab{
+        border:solid;
+        margin: auto;
+        margin-top:160px;
+    }
+    body{
+        text-align: center;
+        background-color: pink;
+    }
+    button{
+        border-radius: 3px;
+        border:solid;
+        background-color: antiquewhite;
+    }
+    .heading{
+        padding-left: 20px;
+        padding-right:10px;
+        background-color: bisque;
+    }
+    .heading1{
+        background-color: bisque;
+        padding:10px;
+    }
+    tr,td{
+        he
+    }
+  </style>
+</head>
+<body>
+    
+  <form onsubmit="return validateForm()">
+    <table   class="tab">
+        <tr class="line">
+            <th class="heading"><label for="text1">Enter User Name: </label></th>
+            <td class="heading1"><input type="text" id="text1" maxlength="16"></td>
+        </tr>
+       <tr>
+            <th><label for="text2">Enter Address:</label></th>
+            <td><input type="text" id="text2" maxlength="16" style="border: solid 3px; height:20px; margin:10px"></td>
+       <tr>
+            <th> <label for="text3">Comment:</label></th>
+            <td> <input type="text" id="text3" maxlength="16" style="border: solid 4px; height:30px;  width: 161px;"></td>
+        </tr>
+   </table><br>
+   
+   <button type="submit" id="submitButton">Submit</button>
+   <button type="reset" id="resetButton">reset</button>
+
+  </form> 
+  <script>
+    function validateForm() {
+      var text1 = document.getElementById("text1").value;
+      var text2 = document.getElementById("text2").value;
+      var text3 = document.getElementById("text3").value;
+      if (text1.length > 15) {
+        alert("Text in  User Name is too long!");
+        return false;
+      }
+      if (text2.length > 15) {
+        alert("Text in Text Address is too long!");
+        return false;
+      }
+      if (text3.length > 15){
+        alert("Text in Comment  is too long!")
+      }
+      return true;
+    }
+    document.getElementById("submitButton").addEventListener("click", function() {
+      alert("Submitted!");
+    })
+    document.getElementById("resetButton").addEventListener("click", function() {
+      alert("Form is Reseted!!");
+    });
+  </script>
+
+</body>
+</html>
